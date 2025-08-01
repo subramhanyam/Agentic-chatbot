@@ -11,3 +11,8 @@ class GraphBuilder:
         self.graph_builder.add_node("chatbot",self.basicchatbotnode.process)
         self.graph_builder.add_edge(START,"chatbot")
         self.graph_builder.add_edge("chatbot",END)
+
+    def set_usecase(self,use_case):
+        if use_case == "basicchatbot":
+            self.basic_chatbot_build_graph()
+        return self.graph_builder.compile()
