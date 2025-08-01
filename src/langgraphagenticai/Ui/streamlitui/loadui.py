@@ -24,7 +24,7 @@ class Loadui:
                 model_options = self.config.llm2_model_options()
             
             self.user_choices["select_model_options"]=st.selectbox("select_model_options",model_options)
-            self.user_choices["API_KEY"]=st.text_input("enter api key",type="password")
+            self.user_choices["API_KEY"]=st.session_state["API_KEY"]=st.text_input("enter api key",type="password")
 
             if not self.user_choices["API_KEY"]:
                 st.warning("please enter a api key")
